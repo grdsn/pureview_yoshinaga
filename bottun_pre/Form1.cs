@@ -61,6 +61,7 @@ namespace bottun_pre
         {
             Button btn = (Button)sender;
             webBrowser1.Navigate("../../../../tset03_pure/" + btn.Name);
+            webBrowser1.Navigate("../../../../tset03_pure/" + btn.Name); 
         }
     }
 }
