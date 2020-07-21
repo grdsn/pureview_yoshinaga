@@ -17,12 +17,23 @@ namespace bottun_pre
         {
             InitializeComponent();
         }
-        private Button[] buttons;
+        private String[] htmlFile;
         int cnt = 0;
+
+        //挿入位置
+        int insertRow = 0;
+        int insertColumn = 0;
+
         private void button1_Click(object sender, EventArgs e)
         {
+
+            // ファイル名を保存する
+            if(this.htmlFile[cnt] == null && cnt <= 5) { }
+
+            htmlFile[cnt] = listBox1.SelectedItem.ToString();
+
             // ファイルの読み込み
-            StreamReader sr = new StreamReader(@"../../../html/hello.html", Encoding.GetEncoding("Shift_JIS"));
+            StreamReader sr = new StreamReader(@"../../../html/" + htmlFile, Encoding.GetEncoding("UTF-8"));
             string str = sr.ReadToEnd();
             sr.Close();
 
@@ -32,36 +43,21 @@ namespace bottun_pre
             // str.Substring(開始位置,取り出す文字数)
             string title = str.Substring(start + 7, end - (start + 7));
 
-            //挿入位置
-            int insertRow = 0;
-            int insertColumn = 0;
-
             if (tableLayoutPanel.GetControlFromPosition(insertColumn, insertRow) == null)
             {
                 Button newButton = new Button();
                 newButton.Text = title;
-                tableLayoutPanel.Controls.Add(newButton, insertColumn, insertRow);
+                newButton.Name = "titleButton" + cnt;
+                tableLayoutPanel.Controls.Add(newButton, insertColumn++, insertRow++);
             }
 
-                //プロパティ設定
-                this.buttons[cnt].Location = new Point(400,150);
-                this.buttons[cnt].Name = "btn" + cnt.ToString();
-                this.buttons[cnt].Text = title;
-                this.buttons[cnt].Top = cnt * 30;
-
-                //コントロールをフォームに追加
-                this.Controls.Add(this.buttons[cnt]);
-
-                cnt++;
-
-            //this.buttons[cnt].Click += new System.EventHandler(btnclick);
+            //listBox1.Items.Add(title);
         }
 
         private void btnclick(object sender, System.EventArgs e)
         {
             Button btn = (Button)sender;
             webBrowser1.Navigate("../../../../tset03_pure/" + btn.Name);
-            webBrowser1.Navigate("../../../../tset03_pure/" + btn.Name); 
         }
     }
 }

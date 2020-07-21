@@ -43,6 +43,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(353, 425);
             this.webBrowser1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.webBrowser1, "プレビューが表示される");
             // 
             // button1
             // 
@@ -58,10 +59,15 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
+            this.listBox1.Items.AddRange(new object[] {
+            "hello.html",
+            "aaaaaaaa.html",
+            "asd.html"});
             this.listBox1.Location = new System.Drawing.Point(389, 86);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(127, 184);
             this.listBox1.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.listBox1, "選択して");
             // 
             // tableLayoutPanel
             // 
