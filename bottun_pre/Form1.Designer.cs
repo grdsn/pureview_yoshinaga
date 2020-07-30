@@ -40,7 +40,6 @@
             this.pureButton4 = new System.Windows.Forms.Button();
             this.pureButton5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
@@ -72,7 +71,10 @@
             this.listBox1.Items.AddRange(new object[] {
             "hello.html",
             "aaaaaaaa.html",
-            "asd.html"});
+            "asd.html",
+            "123456789.html",
+            "test111.html",
+            "overtest.html"});
             this.listBox1.Location = new System.Drawing.Point(389, 86);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(127, 184);
@@ -118,6 +120,7 @@
             this.pureButton2.TabIndex = 1;
             this.pureButton2.UseVisualStyleBackColor = true;
             this.pureButton2.Visible = false;
+            this.pureButton2.Click += new System.EventHandler(this.pureButton2_Click);
             // 
             // pureButton3
             // 
@@ -127,6 +130,7 @@
             this.pureButton3.TabIndex = 2;
             this.pureButton3.UseVisualStyleBackColor = true;
             this.pureButton3.Visible = false;
+            this.pureButton3.Click += new System.EventHandler(this.pureButton3_Click);
             // 
             // pureButton4
             // 
@@ -136,6 +140,7 @@
             this.pureButton4.TabIndex = 3;
             this.pureButton4.UseVisualStyleBackColor = true;
             this.pureButton4.Visible = false;
+            this.pureButton4.Click += new System.EventHandler(this.pureButton4_Click);
             // 
             // pureButton5
             // 
@@ -145,6 +150,7 @@
             this.pureButton5.TabIndex = 4;
             this.pureButton5.UseVisualStyleBackColor = true;
             this.pureButton5.Visible = false;
+            this.pureButton5.Click += new System.EventHandler(this.pureButton5_Click);
             // 
             // label1
             // 
@@ -154,14 +160,6 @@
             this.label1.Size = new System.Drawing.Size(183, 12);
             this.label1.TabIndex = 4;
             this.label1.Text = "←選択されているファイルを表示します";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(524, 302);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 12);
-            this.label2.TabIndex = 5;
             // 
             // closeButton
             // 
@@ -190,7 +188,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.closeButton);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.listBox1);
@@ -212,7 +209,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button pureButton1;
